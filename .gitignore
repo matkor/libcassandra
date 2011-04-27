@@ -28,6 +28,7 @@ examples/.deps/
 examples/.libs/
 examples/ant_simple
 examples/simple
+examples/multihost_simple
 libgenthrift/.deps/
 libcassandra/.deps/
 libcassandra/.dirstamp

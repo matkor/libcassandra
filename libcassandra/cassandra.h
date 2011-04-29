@@ -62,6 +62,19 @@ public:
 		slice_range.reversed = reversed;
 		__isset.slice_range= true;
 	};
+	/**
+	 * Selecting all, only limited by count
+	 * @param[in] count Maximum number of columns (optional)
+	 * @param[in] reversed If column should be reversed.
+	 */
+	inline ColumnSlicePredicate(int32_t count = default_count, bool reversed = false)
+	{
+		// TODO: Verify not setting means all
+		slice_range.count = count;
+		slice_range.reversed = reversed;
+		__isset.slice_range= true;
+	};
+	
 	inline ColumnSlicePredicate(const std::vector<std::string>  & n_column_names) 
 	{
 		column_names = n_column_names;

@@ -24,21 +24,21 @@
 using namespace libcassandra;
 using namespace std;
 
-
+/*
 void static
 debug_check_get_columns(Cassandra & cassandra, const std::string & info_txt) 
 {
-	/*
-	std::vector<org::apache::cassandra::Column> result_columns;
-	ColumnSlicePredicate pred ("first","third");
-	clog << "CDEBUG: Quering using " << pred << " ( " << info_txt << " )." << endl;
-        cassandra.get_columns(result_columns, "sarah","Data",pred);
-        clog << "CDEBUG: Got " << result_columns.size() << " columns." << endl;
-	*/
+	
+	//std::vector<org::apache::cassandra::Column> result_columns;
+	//ColumnSlicePredicate pred ("first","third");
+	//clog << "CDEBUG: Quering using " << pred << " ( " << info_txt << " )." << endl;
+        //cassandra.get_columns(result_columns, "sarah","Data",pred);
+        //clog << "CDEBUG: Got " << result_columns.size() << " columns." << endl;
+	
         string res= cassandra.getColumnValue("sarah", "Data", "first");
         clog << "CDEBUG: debug_check_get_columns(): " << info_txt << " - Value in column retrieved as 1st is: " << res << endl;
 }
-
+*/
 
 
 boost::shared_ptr<Cassandra> 
@@ -86,16 +86,16 @@ libcassandra::MultihostCassandra::add_cluster_node(const std::string & host, int
 	try {
 		boost::shared_ptr<Cassandra>  cassandra = connect_cassandra_client(host,port,keyspace,socket_timeout);
 		// clog << "CLOG: Connected " <<  *cassandra << endl; TODO:
-		clog << "CLOG: Connected to " << host << ":" << port << " KS: " << keyspace << " (timeout: " << socket_timeout << " ms)." << endl;
-		debug_check_get_columns(*cassandra,"After first connect"); 
+		clog << "CLOG: Connected to " << host << ":" << port << " KS: '" << keyspace << "' (timeout: " << socket_timeout << " ms)." << endl;
+		// debug_check_get_columns(*cassandra,"After first connect"); 
 		state_row.switch_to_operational_state(cassandra);
-		debug_check_get_columns(*cassandra,"After switch_to_operational"); 
+		// debug_check_get_columns(*cassandra,"After switch_to_operational"); 
 		
 	} catch ( exception & e) { // TODO: Switch to any exception
 			// For sure apache::thrift::transport::TTransportException & tte
 		// Host not available  state_row.cassandra stays NULL
 		state_row.switch_to_socket_error_state();
-		cerr << "CERROR: Creating cassandra instance connected to " << host << ":" << port << " (timeout: " << socket_timeout << " ms).";
+		cerr << "CERROR: Creating cassandra instance connected to " << host << ":" << port << " KS: '" << keyspace << "' (timeout: " << socket_timeout << " ms).";
 		cerr << " error: " << e.what();
 		cerr << endl;
 	}

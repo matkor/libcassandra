@@ -38,7 +38,7 @@ namespace libcassandra
 class Keyspace;
 
 class ColumnSlicePredicate : public org::apache::cassandra::SlicePredicate
-/*
+/**
  * Represents column slice predicate
  * Extends org::apache::cassandra::SlicePredicate with few useful constructors
  */
@@ -113,6 +113,7 @@ public:
 
   /**
    * @return the underlying cassandra thrift client.
+   * TODO: Switch to smart_ptr ?
    */
   org::apache::cassandra::CassandraClient *getCassandra();
 
@@ -147,7 +148,7 @@ public:
    * @param[in] super_column_name the super column name (optional)
    * @param[in] column_name the column name
    * @param[in] value the column value
-   * @param[in] write_consistency_level consistency level (optional)
+   * @param[in] write_consistency_level consistency level (optional, by default default_write_consistency_level used)
    * @param[in] ttl time to live (optional)
    */
   void insertColumn(const std::string& key,

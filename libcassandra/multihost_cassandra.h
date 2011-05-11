@@ -22,8 +22,6 @@ namespace libcassandra
  TODO: Deal with exceptions:
  terminate called after throwing an instance of 'apache::thrift::transport::TTransportException'
  
- RULE: We use state of first Cassandra object as template for new ones.
- RULE: State (keyspace, timeouts, consistency levels etc) of all Cassandra objects is consistent 
  */
 /**
  * Takes care of thrift clients, connects and returns Cassandra
@@ -53,6 +51,9 @@ public:
 	*/
 	int add_cluster_node(const std::string & host, int port);
 		
+	/**
+	* Prints state of interface, mostly for debug purposes
+	**/ 
 	void debug_print_state(const std::string & state_name);
 
 	/**
@@ -78,8 +79,8 @@ public:
 		connection_retry_interval = n_connection_retry_interval; // seconds;
 	}
 	
-	
 	/// Below methods following standard cassandra interface 
+	/// TODO: Probably lot of adding code
 	
 	/**
 	* Retrieve multiple columns by column slice predicate

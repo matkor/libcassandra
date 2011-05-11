@@ -24,22 +24,6 @@
 using namespace libcassandra;
 using namespace std;
 
-/*
-void static
-debug_check_get_columns(Cassandra & cassandra, const std::string & info_txt) 
-{
-	
-	//std::vector<org::apache::cassandra::Column> result_columns;
-	//ColumnSlicePredicate pred ("first","third");
-	//clog << "CDEBUG: Quering using " << pred << " ( " << info_txt << " )." << endl;
-        //cassandra.get_columns(result_columns, "sarah","Data",pred);
-        //clog << "CDEBUG: Got " << result_columns.size() << " columns." << endl;
-	
-        string res= cassandra.getColumnValue("sarah", "Data", "first");
-        clog << "CDEBUG: debug_check_get_columns(): " << info_txt << " - Value in column retrieved as 1st is: " << res << endl;
-}
-*/
-
 
 boost::shared_ptr<Cassandra> 
 libcassandra::connect_cassandra_client(const std::string & host, int port, const std::string& keyspace, int socket_timeout)
@@ -207,7 +191,7 @@ libcassandra::MultihostCassandra::pick_cassandra()
 			}
 		}
 	}
-	// Trying to connect to any of nodes
+	/// Trying to connect to any of nodes
 	
 	struct timeval connecting_to_any_start_timeval;
 	gettimeofday(&connecting_to_any_start_timeval,NULL);

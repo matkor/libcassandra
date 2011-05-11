@@ -3,7 +3,7 @@ List of TODOs:
 TODO: Agree  on general rules of arg passing
 
 --------------------------------------------------
-TODO: Agree on library versioning system with SONAMEs
+TODO: Agree on library versioning system with SONAMEs (CASSANDRA_LIBRARY_VERSION)
 Currently we have: 
 	Configuration summary for libcassandra version 0.1
 Consider:
@@ -22,7 +22,7 @@ Switch use to boost::shared_ptr instead (not std::tr1::shared_ptr as Thrift gene
 where there is no other option.
 
 --------------------------------------------------
-TODO: Implement default quorum for reads and writes used when no quorum level is passed.
+TODO: Verify implementation of default quorum for reads and writes used when no quorum level is passed.
 
 --------------------------------------------------
 TODO: Regen libgenthrift for current 0.7.x 
@@ -31,6 +31,7 @@ TODO: Regen libgenthrift for current 0.7.x
 --------------------------------------------------
 TODO: Consider not installing libgenthrift as shared lib ?
 Is it for internal libcassandra use only ?
+Link statically to it ?
 
 Do we need installed include/libgenthrift ?
 Is libgenthrift going to be used by anything else than libcassandra ?
@@ -44,14 +45,14 @@ TODO: Review and merge ttl from
 https://github.com/maxcom/libcassandra
 
 --------------------------------------------------
-TODO: Use boost-log as logging facilyty
+TODO: Use boost-log as logging facility
 http://boost-log.sourceforge.net/libs/log/doc/html/index.html
 
 --------------------------------------------------
 TODO: Check and validate split Makefile.ams to standard DIRS layout
 
 --------------------------------------------------
-TODO: Write client aware of cassandra nodes, trying next ones whan first on list is not available
+TODO: Extend MultihostCassandra for more methods available in  Cassandra
 
 --------------------------------------------------
 TODO: Write higher level client, able to connect to many hosts in cluster ?

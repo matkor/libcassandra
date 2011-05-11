@@ -40,4 +40,4 @@ libgenthrift_la_LIBADD= \
 				  $(LTLIBTHRIFT)
 
 
-
+libgenthrift_la_LDFLAGS= ${AM_LDFLAGS} -version-info ${CASSANDRA_LIBRARY_VERSION}

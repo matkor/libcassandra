@@ -3,12 +3,10 @@ List of TODOs:
 TODO: Agree  on general rules of arg passing
 
 --------------------------------------------------
-TODO: Agree on library versioning system with SONAMEs (CASSANDRA_LIBRARY_VERSION)
-Currently we have: 
-	Configuration summary for libcassandra version 0.1
-Consider:
-	0.7.0.1
-	Cassandra line version . cassandra bugfix version. libcassandra interface_version . bugfix version
+TODO: Agree on library versioning system 
+
+--------------------------------------------------
+TODO: Fix using CASSANDRA_LIBRARY_VERSION in sonames.
 
 --------------------------------------------------
 TODO: Agree on avoiding pointers.

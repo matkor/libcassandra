@@ -44,5 +44,7 @@ libcassandra_la_SOURCES = \
 
 libcassandra_la_DEPENDENCIES= ../libgenthrift/libgenthrift.la
 libcassandra_la_LIBADD= $(LIBM) ../libgenthrift/libgenthrift.la
-libcassandra_la_LDFLAGS= ${AM_LDFLAGS} -version-info ${CASSANDRA_LIBRARY_VERSION}
+# libcassandra_la_LDFLAGS= ${AM_LDFLAGS} -version-info $(CASSANDRA_LIBRARY_VERSION)
+libcassandra_la_LDFLAGS= ${AM_LDFLAGS} -version-info 3:0:0
+
 

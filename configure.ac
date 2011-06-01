@@ -7,7 +7,7 @@
 # the COPYING file in this directory for full text.
 
 AC_PREREQ(2.59)
-AC_INIT([libcassandra],[0.1],[http://github.com/posulliv/libcassandra])
+AC_INIT([libcassandra],[0.2.91],[http://github.com/matkor/libcassandra])
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SRCDIR([libcassandra/cassandra.cc])
 AC_CONFIG_AUX_DIR(config)
@@ -19,7 +19,11 @@ AC_PROG_LIBTOOL
 PANDORA_CANONICAL_TARGET(less-warnings, warnings-always-on, require-cxx, skip-visibility)
 
 #shared library versioning
-CASSANDRA_LIBRARY_VERSION=2:1:1
+# TODO: Setting here does seems to work, currently setting maunally in 
+#       libcassandra/Makefile.am
+#       and
+#       libgenthrift/Makefile.am
+CASSANDRA_LIBRARY_VERSION=3:0:0
 #                         | | |
 #                  +------+ | +---+
 #                  |        |     |
